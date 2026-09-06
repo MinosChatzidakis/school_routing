@@ -1,0 +1,64 @@
+.search-container {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  padding: 12px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #7a7a7a;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #333;
+  font: inherit;
+  font-weight: bold;
+}
+
+.search-input:focus {
+  outline: 1px solid #105cb6;
+  border-color: #105cb6;
+}
+
+.options-table {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #7a7a7a;
+  border-top: none;
+  max-height: 250px;
+  overflow-y: auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  box-sizing: border-box;
+}
+
+.dropdown-item {
+  padding: 4px 10px 4px 25px; /* Matches the indent in the image */
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  background-color: transparent;
+}
+
+.dropdown-item h3 {
+  margin: 0;
+  font-size: inherit;
+}
+
+/* Emulates the blue selection bar from the image */
+.dropdown-item:hover,
+.dropdown-item.selected {
+  background-color: #105cb6;
+  color: #fff;
+}
