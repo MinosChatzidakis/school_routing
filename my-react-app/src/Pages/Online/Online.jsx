@@ -197,7 +197,7 @@ const OnlinePage = () => {
   const [showLocationOptions, setShowLocationOptions] = useState(false);
   const [err, setErr] = useState("");
   const [selectedLocation, setSelectedLocation] = useState("");
-  const FETCH_URL = "http://localhost:3000/api/get-link";
+  const FETCH_URL = "https://www.grapsa.edu.gr/api/get-link";
 
   const gotoCalendar = async () => {
     try {

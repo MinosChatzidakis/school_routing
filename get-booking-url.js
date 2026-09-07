@@ -123,7 +123,7 @@ app.post("/api/get-link", (req, res, next) => {
     }
 
     if (location === "Επαρχία") {
-      return res.status(200).json({ url: `${baseUrl}$pangratizm` });
+      return res.status(200).json({ url: `${baseUrl}pangratizm` });
     }
 
     const assignedSchool = territoryMap.get(location);
