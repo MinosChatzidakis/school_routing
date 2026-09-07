@@ -24,7 +24,7 @@ const InPersonPage = () => {
   ]);
   const [showError, setShowError] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("");
-  const BASE_URL = "https://calendar.grapsa.edu.gr/events/book/";
+  const BASE_URL = "https://calendar.grapsa.edu.gr/book/";
   return (
     <>
       {/* Question 2 (In Person) Row */}

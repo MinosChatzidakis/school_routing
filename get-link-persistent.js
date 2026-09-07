@@ -5,7 +5,7 @@ const csv = require("csv-parser");
 
 const app = express();
 const port = 3000;
-const baseUrl = "https://calendar.grapsa.edu.gr/events/book/";
+const baseUrl = "https://calendar.grapsa.edu.gr/book/";
 
 app.use(express.json());
 app.use(cors());

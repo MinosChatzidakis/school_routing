@@ -29,9 +29,10 @@
 
 .options-table {
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 0;
-  width: 100%;
+  width: calc(100% - 30px);
+  margin-left: 15px;
   background: #fff;
   border: 1px solid #7a7a7a;
   border-top: none;
