@@ -195,13 +195,13 @@ const OnlinePage = () => {
   ];
   const [area, setArea] = useState("");
   const [showLocationOptions, setShowLocationOptions] = useState(false);
-  const [showError, setShowError] = useState(false);
-  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [err, setErr] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("");
   const FETCH_URL = "http://localhost:3000/api/get-link";
 
   const gotoCalendar = async () => {
     try {
-      console.log(`Fetching url for location: ${selectedLocation}`);
+      //console.log(`Fetching url for location: ${selectedLocation}`);
       const response = await fetch(FETCH_URL, {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -210,17 +210,19 @@ const OnlinePage = () => {
 
       if (!response.ok) {
         const err = await response.json();
-        console.log(err);
-        setShowError(true);
+        //console.log(err);
+        setErr(err);
+        return;
       }
       const dataJ = await response.json();
       const url = dataJ.url;
-      setShowError(false);
+      setErr("");
       if (url) {
         window.location.href = url;
       }
     } catch (error) {
-      console.log(error);
+      setErr("Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά.");
+      //console.log(error);
     }
   };
 
@@ -279,15 +281,6 @@ const OnlinePage = () => {
                 selection={selectedLocation}
                 setSelection={setSelectedLocation}
               />
-              {/* <button
-                  className="submit-btn"
-                  disabled={!selectedLocation}
-                  onClick={() => gotoCalendar()}
-                >
-                  {selectedLocation
-                    ? `Βρες ραντεβού (${selectedLocation})`
-                    : "Βρες ραντεβού"}
-                </button> */}
             </div>
           </div>
         )}
@@ -302,9 +295,9 @@ const OnlinePage = () => {
             ? `Βρες ραντεβού (${selectedLocation || area || ""})`
             : "Βρες ραντεβού"}
         </button>
-        {showError && (
+        {err && (
           <h2 style={{ color: "red", fontSize: 16 }}>
-            Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά.
+            {err || "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά."}
           </h2>
         )}
       </div>
