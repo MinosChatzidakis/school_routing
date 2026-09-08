@@ -9,7 +9,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="logo">
-        <img src={logo} class="logoimg" />
+        <a href="http://grapsa.edu.gr">
+        <img src={logo} class="logoimg" alt="home"/>
+      </a>
       </div>
       <div className="app-container">
         <Routes>
