@@ -38,7 +38,7 @@ const SplashPage = () => {
               className="modality-btn"
               onClick={() => setModality("online")}
             >
-              Online (μέσω Zoom)
+              Online (μέσω Google Meet)
             </button>
           </div>
         </div>
